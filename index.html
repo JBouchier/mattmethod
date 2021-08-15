@@ -51,28 +51,35 @@
         }
     </style>
     <script>
+        const base_bet = 2000.0;
+        const start_balance = 10000.0;
+        
         let formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
         });
-        let balance = 10000.00;
-        let bet = 2000.00;
-        let wins = 0;
+        let balance, bet, wins;
+        
+        function reset() {
+            resetChain();
+            balance = start_balance;
+            displayBalance();
+        }
+
         function win() {
             balance += bet;
-            bet *= 2;
-            wins++;
-            if (wins >= 3) {
-                wins = 0;
-                bet = 2000.00;
-            }
+            if (++wins >= 3) resetChain(); else bet *= 2;
             displayBalance();
+        }
+
+        function resetChain() {
+            bet = base_bet;
+            wins = 0;
         }
 
         function lose() {
             balance -= bet;
-            bet = 2000.00;
-            wins = 0;
+            resetChain();
             displayBalance();
         }
 
@@ -81,7 +88,7 @@
         }
     </script>
 </head>
-<body onload="displayBalance();">
+<body onload="reset();">
     <header class="flex">
         <main style="color: black; font-weight: 900; font-size: 25pt;">
             Matt Method
