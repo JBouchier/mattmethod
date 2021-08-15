@@ -11,7 +11,7 @@
             padding: 0;
             color: white;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 40pt;
+            font-size: 30pt;
         }
         header {
             height: 52px;
@@ -24,10 +24,10 @@
             align-items: center;
         }
         .clickable {
-            width: 300px;
+            width: clamp(30px, 40vw, 300px);
             height: 300px;
             border-radius: 30px;
-            margin: 20px;
+            margin: 5px;
             cursor: pointer;
             -webkit-touch-callout: none;
               -webkit-user-select: none;
@@ -43,7 +43,7 @@
 
         #balance {
             height: 100px;
-            width: 600px;
+            width: clamp(30px, 40vw, 300px);
             border-radius: 10px;
             border-style: solid;
             border-color: black;
@@ -83,12 +83,12 @@
 </head>
 <body onload="displayBalance();">
     <header class="flex">
-        <main style="color: black; font-weight: 900; font-size: 35pt;">
+        <main style="color: black; font-weight: 900; font-size: 25pt;">
             Matt Method
         </main>
     </header>
     <main class="flex" style="flex-direction:column;">
-        <div id="buttons" style="height: 80vh;" class="flex">
+        <div id="buttons" style="height: 60vh;" class="flex">
             <div class="clickable flex" style="background: green;" onclick="win();" id="win">WIN</div>
             <div class="clickable flex" style="background: red;" onclick="lose();" id="lose">LOSE</div>
         </div>
