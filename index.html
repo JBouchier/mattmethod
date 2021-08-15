@@ -29,12 +29,15 @@
             border-radius: 30px;
             margin: 5px;
             cursor: pointer;
+        }
+
+        .unselect {
             -webkit-touch-callout: none;
               -webkit-user-select: none;
                -khtml-user-select: none;
                  -moz-user-select: none;
                   -ms-user-select: none;
-                      user-select: none;           
+                      user-select: none; 
         }
         
         #buttons :hover {
@@ -115,17 +118,17 @@
 </head>
 <body onload="reset();">
     <header class="flex">
-        <main style="color: black; font-weight: 900; font-size: 25pt;">
+        <main class="unselect"style="color: black; font-weight: 900; font-size: 25pt;">
             Matt Method
         </main>
     </header>
     <main class="flex" style="justify-content: space-around; flex-direction:column; height: 80vh;">
         <div id="buttons" class="flex">
-            <div class="clickable flex" style="background: green;" onclick="win();" id="win">WIN</div>
-            <div class="clickable flex" style="background: red;" onclick="lose();" id="lose">LOSE</div>
+            <div class="clickable unselect flex" style="background: green;" onclick="win();" id="win">WIN</div>
+            <div class="clickable unselect flex" style="background: red;" onclick="lose();" id="lose">LOSE</div>
         </div>
-        <div id="opposite" class="flex" style="color: rgb(80, 80, 80);">Betting: $101010</div>
-        <div id="balance" class="flex"></div>
+        <div id="opposite" class="flex unselect" style="color: rgb(80, 80, 80);">Betting: $101010</div>
+        <div id="balance" class="flex unselect"></div>
     </main>
 </body>
 </html>
