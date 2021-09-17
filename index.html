@@ -70,7 +70,7 @@
         }
 
         function win() {
-            balance += bet;
+            balance += bet*0.5;
             //let len = balance-bet < 20000 ? 2 : 3;
             if (++wins >= 3) resetChain(); else bet *= 1.5;
             displayBalance();
