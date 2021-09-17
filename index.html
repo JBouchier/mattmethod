@@ -55,7 +55,7 @@
     </style>
     <script>
         const base_bet = 2000.0;
-        const start_balance = 10000.0;
+        const start_balance = 14000.0;
         
         let formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -72,7 +72,7 @@
         function win() {
             balance += bet;
             //let len = balance-bet < 20000 ? 2 : 3;
-            if (++wins >= 2) resetChain(); else bet *= 2;
+            if (++wins >= 3) resetChain(); else bet *= 1.5;
             displayBalance();
             up++;
             blink('green');
